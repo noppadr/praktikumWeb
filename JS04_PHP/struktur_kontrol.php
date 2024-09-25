@@ -75,7 +75,8 @@ $nilaiTerRendah2 = $value[count($value) - 2];
 
 $totalNilai = 0;
 for ($i=0; $i < count($value); $i++) { 
-    if($value[$i] != $nilaiTerRendah1 && $value[$i] != $nilaiTerRendah2 && $value[$i] != $nilaiTertinggi1 && $value[$i] != $nilaiTertinggi2){
+    if($value[$i] != $nilaiTerRendah1 && $value[$i] != $nilaiTerRendah2 && 
+        $value[$i] != $nilaiTertinggi1 && $value[$i] != $nilaiTertinggi2){
         $totalNilai += $value[$i];
     }
 }
