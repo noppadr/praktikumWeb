@@ -5,11 +5,14 @@
     <body>
         <h2>Array Terindeks</h2>
         <?php
-        $Listdosen=["Elok Nur Hamdana", "Unggul Pamenang", "Bagas Nugraha"];
+        $Listdosen = ["Elok Nur Hamdana", "Unggul Pamenang", "Bagas Nugraha"];
+        $length = count($Listdosen);
 
-        echo $Listdosen[2] . "<br>";
-        echo $Listdosen[0] . "<br>";
-        echo $Listdosen[1] . "<br>";    
-    ?>
+        for ($i = 0; $i < $length; $i++) {
+            echo $Listdosen[$i] . "<br>";
+        }
+        ?>
     </body>
 </html>
+
+
