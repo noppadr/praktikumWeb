@@ -1,9 +1,7 @@
-$(document).ready(function() {
-    $('#upload-form').submit(function(e) {
+$(document).ready(function () {
+    $('#upload-form').submit(function (e) {
         e.preventDefault();
-
-        const formData = new FormData(this);
-
+        var formData = new FormData(this);
         $.ajax({
             type: 'POST',
             url: 'upload_ajax.php',
@@ -11,12 +9,13 @@ $(document).ready(function() {
             cache: false,
             contentType: false,
             processData: false,
-            success: function(response) {
+            success: function (response) {
                 $('#status').html(response);
             },
-            error: function() {
-                $('#status').html('Terjadi kesalahan saat mengunggah file.');
+                error: function() {
+                    $('#status').html('Terjadi kesalahan saat mengunggah file.');
             }
         });
     });
 });
+
