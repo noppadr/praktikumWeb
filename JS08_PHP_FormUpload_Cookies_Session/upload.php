@@ -7,7 +7,14 @@ if(isset($_POST["submit"])) {
     
     if(in_array($imageFileType, $allowedTypes) && $_FILES["myfile"]["size"] <= 500000) {
         if(move_uploaded_file($_FILES["myfile"]["tmp_name"], $target_file)) {
-            echo "File berhasil diunggah.";
+            echo "File berhasil diunggah.<br><br>";
+            
+            // Menampilkan thumbnail gambar
+            list($width, $height) = getimagesize($target_file);
+            $new_width = 200;
+            $new_height = ($height / $width) * $new_width;
+            
+            echo "<img src='$target_file' width='$new_width' height='$new_height' />";
         } else {
             echo "Gagal mengunggah file.";
         }
